@@ -1,0 +1,33 @@
+.modal {
+  background: #F9FAFD;
+  opacity: .9;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 0 7px 70px rgba(0, 50, 123, 0.1);
+    padding: 54px 47px 55px 48px;
+    width: 520px;
+  }
+
+  &__inner-close {
+    padding: 5px;
+    top: 21px;
+    right: 26px;
+    background: transparent;
+    border: none;
+    position: absolute;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
