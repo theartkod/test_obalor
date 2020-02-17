@@ -4,13 +4,13 @@
       Введите код
     </div>
     <label class="code-input__desc">
-      Мы отправили код на +7 (960) 409-97-36
+      Мы отправили код на {{ phone }}
       <a href="#" class="code-input__desc-link" @click.prevent="$emit('change-phone')">Изменить</a>
     </label>
     <code-input
       v-model="code"
     />
-    <div class="error-text"></div>
+    <div class="error-text" />
     <div class="form-modal__send-code">
       <button
         v-if="showLink"
@@ -43,6 +43,12 @@ import CodeInput from '../CodeInput'
 export default {
   name: 'SmsConfirm',
   components: { CodeInput },
+  props: {
+    phone: {
+      type: String,
+      default: ''
+    }
+  },
   data() {
     return {
       code: '',

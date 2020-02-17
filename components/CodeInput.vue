@@ -6,7 +6,6 @@
         :key="index"
         :ref="`codeInput${index}`"
         v-model="code[index]"
-        autofocus
         class="code-input__part"
         :clearable="false"
         @paste="pasteHandler($event)"

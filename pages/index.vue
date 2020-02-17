@@ -1,17 +1,24 @@
 <template>
   <div>
-    <button @click="isShowModal = true">
+    <button
+      class="form-modal__submit"
+      style="max-width: 300px"
+      @click="isShowModal = true"
+    >
       Регистрация
     </button>
     <modal
       v-if="isShowModal"
       @close="isShowModal = false"
     >
-      <component
-        :is="currentView"
-        @confirm-code="confirmCodeHandler"
-        @change-phone="changePhoneHandler"
-      />
+      <keep-alive>
+        <component
+          :is="currentView"
+          :phone="phone"
+          @confirm-code="confirmCodeHandler"
+          @change-phone="changePhoneHandler"
+        />
+      </keep-alive>
     </modal>
   </div>
 </template>
